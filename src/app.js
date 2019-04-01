@@ -5,6 +5,7 @@ const weather = require('./utils/weather')
 const geocode = require('./utils/geocode')
 
 const server = express()
+const port = process.env.PORT || 3000
 
 const publicDir = path.join(__dirname, '../public')
 const viewsDir = path.join(__dirname, '../templates/views')
@@ -90,6 +91,6 @@ server.get('*', (req,res) => {
     })
 })
 
-server.listen(3000, () => {
-    console.log('Listening on port 3000..')
+server.listen(port, () => {
+    console.log(`Listening on port ${port}..`)
 })
