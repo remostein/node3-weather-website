@@ -16,12 +16,12 @@ body {
 footer {
     color: #888;
     border-top: 1px solid #eee;
-    margin-top:16px;
+    margin-top: 16px;
 }
 
 header {
     margin-top: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 30px;
 }
 
 
@@ -29,10 +29,10 @@ h1 {
     font-size: 50px;
     display: block;
     position: relative;
-    color:black;
+    color: black;
     margin-left: auto;
     margin-right: auto;
-    text-align: left;
+    text-align: center;
     margin-bottom: 16px;
 }
 
@@ -47,29 +47,31 @@ img {
     /*margin-left: auto;
     margin-right: auto;*/
     width: 50%;
-    
+
 }
 
 .navbar {
     display: block;
     position: relative;
-    color:gray;
+    color: gray;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
 
-.navbar a:link,.navbar a:visited {
+.navbar a:link,
+.navbar a:visited {
     color: #777;
     padding: 6px 12px;
     margin: 10px 20px;
-    text-align: center; 
+    text-align: center;
     text-decoration: none;
     display: inline-block;
 
-  }
-  
-  .navbar a:hover, .navbar a:active {
+}
+
+.navbar a:hover,
+.navbar a:active {
     color: #222;
     border-bottom: solid 6px lightskyblue;
     text-shadow: #ddd 1px 4px 4px;
@@ -78,13 +80,19 @@ img {
     margin-bottom: -16px;
 }
 
-#page404{
+#page404 {
     font-size: 68px;
     display: inline-block;
 }
 
-#msg404{
+#msg404 {
     display: inline-block;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 input {
@@ -99,3 +107,148 @@ button {
     padding: 8px;
     color: white;
 }
+
+.tiny-fade {
+    color: #aaa;
+    font-size: 10px;
+}
+
+.small-fade {
+    color: #999;
+    font-size: 12px;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    flex: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    .col {
+      width: 100%;
+    }
+  }
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.cell {
+    display: table-cell;
+    padding-right: 5px;
+}
+
+.block {
+    display: block;
+    text-align: left;
+}
+
+#wtemp {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 35px;
+    margin: 0;
+    padding-right: 10px;
+}
+
+#wicon {
+    margin-top: -10px;
+    display: none;
+    width: 50px;
+    height: 50px;
+    float: left;
+    padding-left: 10px;
+}
+
+.main-temp {
+    padding-top: 20%;
+}
+
+
+
+/* Toggler */
+/* 
+.onoffswitch {
+    position: relative;
+    width: 71px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 20px;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "ºC";
+    padding-left: 10px;
+    background-color: #888;
+    color: #FFFFFF;
+}
+
+.onoffswitch-inner:after {
+    content: "ºF";
+    padding-right: 10px;
+    background-color: #888;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block;
+    width: 26px;
+    margin: 2px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 37px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}  */

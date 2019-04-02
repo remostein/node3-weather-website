@@ -13,7 +13,26 @@ const weather = (long, lat, callback) => {
                 callback(body.error, undefined)
             } else {
                 const curr = body.currently
-                const data = `It is currently ${body.daily.data[0].summary} It is ${curr.temperature} degrees out. There is ${curr.precipProbability*100}% chance of rain`
+                const daily = body.daily.data[0]
+                const dateMinTemp = new Date(daily.temperatureMinTime*1000)
+                const dateMaxTemp = new Date(daily.temperatureMaxTime*1000)
+                const hoursMin = dateMinTemp.getHours()
+                const hoursMax = dateMaxTemp.getHours()
+                const minMin = "0" + dateMinTemp.getMinutes()
+                const minMax = "0" + dateMaxTemp.getMinutes()
+                const formattedTimeMin = hoursMin + ':' + minMin.substr(-2)
+                const formattedTimeMax = hoursMax + ':' + minMax.substr(-2)
+
+                const data = {
+                    summary: `It is currently ${daily.summary} It is ${curr.temperature} degrees out. There is ${curr.precipProbability*100}% chance of rain`,
+                    temperature: curr.temperature,
+                    precipProbability: curr.precipProbability*100,
+                    minTemp: daily.temperatureMin,
+                    minTempTime: formattedTimeMin,
+                    maxTemp: daily.temperatureMax,
+                    maxTempTime: formattedTimeMax,
+                    icon: curr.icon
+                }
                 callback(undefined, data)
             }
         }

@@ -47,8 +47,16 @@ server.get('/weather', (req,res) => {
 
     const finalData = {
         address: req.query.address,
-        location: '',
-        forcast: '',
+        data: {},
+        location: ''
+        // summary: '',
+        // temperature: '',
+        // precipProbability: '',
+        // minTemp: '',
+        // minTempTime: '',
+        // maxTemp: '',
+        // maxTempTime: '',
+        // icon: ''
     }
     
     geocode(req.query.address, (err, {Name, Longitude, Latitude} = {} ) => {
@@ -56,7 +64,6 @@ server.get('/weather', (req,res) => {
             return res.send({ err })
         } else {
             finalData.location += Name
-            //res.send(`Finding weather for: ${Name}`)
             weather(Longitude, Latitude, findWeather)
         }
     })
@@ -65,16 +72,10 @@ server.get('/weather', (req,res) => {
         if(err) {
             return res.send({ err })
         } else {
-            finalData.forcast += data
+            finalData.data = data
             return res.send(finalData)
         }
     }
-
-
-    // res.send({
-    //     forcast:"It's gonna be rainy",
-    //     location: req.query.address
-    // })
 })
 
 server.get('/help/*', (req,res) => {
