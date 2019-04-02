@@ -12,8 +12,11 @@ const outHighTemp = document.getElementById('hightemp')
 const outLowTemp = document.getElementById('lowtemp')
 const outHighTempTime = document.getElementById('hightemp-time')
 const outLowTempTime =document.getElementById('lowtemp-time')
+const dateTime = document.getElementById('date-time')
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-const ElementsToClear = [outTemp, outLocation, outForecast, outHighTemp, outLowTemp, outHighTempTime, outLowTempTime]
+
+const ElementsToClear = [outTemp, outLocation, outForecast, outHighTemp, outLowTemp, outHighTempTime, outLowTempTime, dateTime]
 
 
 weatherForm.addEventListener('submit', (e) => {
@@ -41,6 +44,13 @@ weatherForm.addEventListener('submit', (e) => {
                 outLowTemp.innerHTML = `Lowest: º${data.data.minTemp}`
                 outHighTempTime.innerHTML = `at: ${data.data.maxTempTime}`
                 outLowTempTime.innerHTML = `at: ${data.data.minTempTime}`
+                const tempDateTime = new Date()
+                const tempDay = "0" + tempDateTime.getDay()
+                const tempMonth = tempDateTime.getMonth()
+                const tempYear = tempDateTime.getFullYear()
+                const tempTime = tempDateTime.toTimeString().split(' ')
+                const finalDateTime = `${tempDay} ${months[tempMonth]} ${tempYear} ${tempTime[0]}`
+                dateTime.innerHTML = finalDateTime
                 console.log(data)
             }
             
