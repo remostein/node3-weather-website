@@ -67,14 +67,13 @@ img {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-
 }
 
 .navbar a:hover,
 .navbar a:active {
     color: #222;
     border-bottom: solid 6px lightskyblue;
-    text-shadow: #ddd 1px 4px 4px;
+    text-shadow: rgb(184, 184, 184) 1px 4px 4px;
     font-weight: 500;
     overflow: hidden;
     margin-bottom: -16px;
@@ -147,9 +146,20 @@ button {
     .main-temp {
         padding-top: 0 !important;
         margin-top:  0 !important;
+    }    
+
+    .navbar a:link,
+    .navbar a:visited {
+        padding: 6px 12px;
+        margin: 10px 5px;
+        display: inline-block;
     }
-    
+
+    .navbar a:hover,
+    .navbar a:active {
+        margin-bottom: -16px;
   }
+}
 
 .table {
     display: table;
@@ -185,7 +195,6 @@ button {
     height: 50px;
     float: left;
     padding-left: 20px;
-    border: 1px solid blue;
 }
 
 .main-temp {
