@@ -3,11 +3,11 @@ const request = require('request')
 const geocode = (location, callback) => {
     const mbToken = 'pk.eyJ1IjoicmVtb3N0ZWluIiwiYSI6ImNqdDhzOXJzaTAxZWY0M3F0dDE4d294cm8ifQ.pc_pujd2z-9ClMdvr0jzCw'
 
-    const mburl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${mbToken}&limit=1`
+    const mburl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURI(location)}.json?access_token=${mbToken}&limit=1`
 
-    request({url:mburl, json:true}, (err, {body}) => {
+    request({url:mburl, json:true}, (err, response, body) => {
         if(err) {
-            callback('Unable to connect to weather services', undefined)
+            callback('Unable to connect to location services', undefined)
         } else if(!body.features || body.features.length === 0){
             callback('Could not find location', undefined)
         } else {

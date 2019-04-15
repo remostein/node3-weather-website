@@ -28,6 +28,7 @@ weatherForm.addEventListener('submit', (e) => {
 
     fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
+            //console.log(response)
             if (data.err) {
                 outStatus.style.color = '#F00'
                 outStatus.innerHTML = `Error: ${data.err}`
