@@ -45,13 +45,14 @@ weatherForm.addEventListener('submit', (e) => {
                 outHighTempTime.innerHTML = `at: ${data.data.maxTempTime}`
                 outLowTempTime.innerHTML = `at: ${data.data.minTempTime}`
                 const tempDateTime = new Date()
-                const tempDay = "0" + tempDateTime.getDay()
+                let tempDay = "0" + tempDateTime.getDate().toString()
+                tempDay = tempDay.slice(1)
                 const tempMonth = tempDateTime.getMonth()
                 const tempYear = tempDateTime.getFullYear()
                 const tempTime = tempDateTime.toTimeString().split(' ')
                 const finalDateTime = `${tempDay} ${months[tempMonth]} ${tempYear} ${tempTime[0]}`
                 dateTime.innerHTML = finalDateTime
-                console.log(data)
+                //console.log(data)
             }
             
         })
